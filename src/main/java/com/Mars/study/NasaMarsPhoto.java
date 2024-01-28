@@ -1,5 +1,7 @@
 package com.Mars.study;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.Date;
 
 public class NasaMarsPhoto {
@@ -9,7 +11,10 @@ public class NasaMarsPhoto {
     private Integer sol;
     private NasaCamera camera;
 
+    @JsonProperty("img_src")
     private String imgSrc;
+
+    @JsonProperty("earth_date")
     private Date earthDate;
 
     private NasaRover rover;
