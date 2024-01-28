@@ -1,6 +1,8 @@
 package com.Mars.study.controller;
 
 
+import com.Mars.study.NasaMarsPhoto;
+import com.Mars.study.NasaResponse;
 import com.Mars.study.service.NasaMarsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,7 +20,7 @@ public class HomeController {
     @GetMapping("/")
     public String HomeView(ModelMap modelMap) {
 
-        String roverData = service.getRoverData();
+        NasaResponse roverData = service.getRoverData();
         modelMap.put("roverData", roverData);
         return "index";
     }

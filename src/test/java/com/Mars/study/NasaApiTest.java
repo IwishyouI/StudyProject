@@ -12,9 +12,9 @@ public class NasaApiTest {
 
         RestTemplate rt = new RestTemplate();
 
-        ResponseEntity<String> forEntity = rt.getForEntity("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1&api_key=DEMO_KEY", String.class);
-        String body = forEntity.getBody();
-        System.out.println(body);
+        ResponseEntity<NasaResponse> forEntity = rt.getForEntity("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1&api_key=62FQB9dDvEpei7mKgt7l8xQeB9aSS4efuTK0FrjE", NasaResponse.class);
+
+        System.out.println(forEntity.getBody());
 
     }
 }
