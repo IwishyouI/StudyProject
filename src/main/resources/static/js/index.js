@@ -1,4 +1,9 @@
-document.getElementById('Spirit').addEventListener('click',function()){
+let marsApiButtons = document.querySelectorAll("button[id*='marsApi'");
 
-    alert('Spirit')
-}
+marsApiButtons.forEach(button=> button.addEventListener('click', function(){
+
+    const buttonId = this.id
+    const roverId = buttonId.split('marsApi')[1]
+    alert(roverId)
+
+}))
