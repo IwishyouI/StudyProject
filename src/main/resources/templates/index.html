@@ -19,6 +19,11 @@
 
 
 <div class="container">
+    <div class="btn-group-lg" role="group" style="margin: 2em 0em">
+        <button type="button" class="btn btn-primary" id="Curiosity">Curiosity</button>
+        <button type="button" class="btn btn-primary" id="Opportunity">Opportunity</button>
+        <button type="button" class="btn btn-primary" id="Spirit">Spirit</button>
+    </div>
     <div class="row" th:each="index : ${#numbers.sequence(0,roverData.photos.size(),4)}">
         <div class="col" th:if="${index <= roverData.photos.size()}">
             <img th:src="${roverData.photos[index].imgSrc}" class="img-fluid">
@@ -35,6 +40,8 @@
         </div>
     </div>
 </div>
+<script type="text/javascript" src="/js/index.js">
 
+</script>
 </body>
 </html>

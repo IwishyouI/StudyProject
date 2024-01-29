@@ -20,7 +20,7 @@ public class HomeController {
     @GetMapping("/")
     public String HomeView(ModelMap modelMap) {
 
-        NasaResponse roverData = service.getRoverData();
+        NasaResponse roverData = service.getRoverData("opportunity");
         modelMap.put("roverData", roverData);
         return "index";
     }
