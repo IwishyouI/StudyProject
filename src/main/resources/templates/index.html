@@ -21,25 +21,25 @@
 <div class="container">
     <form method="get" action="" id="frmRoverType">
         <input type="hidden" id="marsApiRoverData" name="marsApiRoverData" value=""/>
-        <div class="btn-group-lg" role="group" style="margin: 2em 0em">
-            <button type="button" class="btn btn-primary" id="marsApiCuriosity">Curiosity</button>
-            <button type="button" class="btn btn-primary" id="marsApiOpportunity">Opportunity</button>
-            <button type="button" class="btn btn-primary" id="marsApiSpirit">Spirit</button>
+        <div class="btn-group btn-group-lg" role="group" style="margin: 2em 0em;">
+            <button type="button" class="btn btn-secondary" id="marsApiCuriosity">Curiousity</button>
+            <button type="button" class="btn btn-secondary" id="marsApiOpportunity">Opportunity</button>
+            <button type="button" class="btn btn-secondary" id="marsApiSpirit">Spirit</button>
         </div>
     </form>
     <div class="row" th:each="index : ${#numbers.sequence(0,roverData.photos.size(),4)}">
         <div class="col" th:if="${index < roverData.photos.size()}">
-            <img th:src="${roverData.photos[index].imgSrc}" class="img-fluid">
+            <img th:src="${roverData.photos[index].imgSrc}" style="margin: 2em 0em" class="img-fluid">
         </div>
         <div class="col" th:if="${index+1 < roverData.photos.size()}">
-            <img th:src="${roverData.photos[index+1].imgSrc}" class="img-fluid">
+            <img th:src="${roverData.photos[index+1].imgSrc}" style="margin: 2em 0em" class="img-fluid">
         </div>
         <div class="col" th:if="${index+2 < roverData.photos.size()}">
-            <img th:src="${roverData.photos[index+2].imgSrc}" class="img-fluid">
+            <img th:src="${roverData.photos[index+2].imgSrc}" style="margin: 2em 0em" class="img-fluid">
         </div>
 
         <div class="col" th:if="${index+3 < roverData.photos.size()}">
-            <img th:src="${roverData.photos[index+3].imgSrc}" class="img-fluid">
+            <img th:src="${roverData.photos[index+3].imgSrc}" style="margin: 2em 0em" class="img-fluid">
         </div>
     </div>
 </div>
