@@ -21,12 +21,15 @@ public class HomeController {
     private NasaMarsService service;
 
     @GetMapping("/")
-    public String HomeView(ModelMap modelMap,@RequestParam(required = false) String marsApiRoverData) {
+    public String HomeView(ModelMap modelMap,@RequestParam(required = false) String marsApiRoverData , @RequestParam(required = false) Integer marsSol) {
 
         if (StringUtils.isEmpty(marsApiRoverData)) {
             marsApiRoverData = "opportunity";
         }
-        NasaResponse roverData = service.getRoverData(marsApiRoverData);
+        if (marsSol == null) {
+            marsSol=1;
+        }
+        NasaResponse roverData = service.getRoverData(marsApiRoverData,marsSol);
         modelMap.put("roverData", roverData);
         return "index";
     }

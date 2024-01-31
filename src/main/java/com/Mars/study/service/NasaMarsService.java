@@ -11,10 +11,10 @@ import org.springframework.web.client.RestTemplate;
 public class NasaMarsService {
 
 
-    public NasaResponse getRoverData(String roverType) {
+    public NasaResponse getRoverData(String roverType, Integer marsSol) {
 
         RestTemplate rt = new RestTemplate();
-        ResponseEntity<NasaResponse> forEntity = rt.getForEntity("https://api.nasa.gov/mars-photos/api/v1/rovers/" + roverType + "/photos?sol=2&api_key=62FQB9dDvEpei7mKgt7l8xQeB9aSS4efuTK0FrjE", NasaResponse.class);
+        ResponseEntity<NasaResponse> forEntity = rt.getForEntity("https://api.nasa.gov/mars-photos/api/v1/rovers/" + roverType + "/photos?sol=" + marsSol + "&api_key=62FQB9dDvEpei7mKgt7l8xQeB9aSS4efuTK0FrjE", NasaResponse.class);
         NasaResponse body = forEntity.getBody();
         System.out.println(body);
 
