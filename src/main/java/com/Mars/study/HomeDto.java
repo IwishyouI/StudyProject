@@ -11,11 +11,22 @@ public class HomeDto {
     private Boolean FHAZ;
     private Boolean RHAZ;
     private Boolean MAST;
+
+    private Boolean MARDI;
     private Boolean CHEMCAM;
     private Boolean MAHLI;
     private Boolean NAVCAM;
     private Boolean PANCAM;
     private Boolean MINITES;
+
+    public Boolean getMARDI() {
+        return MARDI;
+    }
+
+    public void setMARDI(Boolean MARDI) {
+        this.MARDI = MARDI;
+    }
+
     public String getMarsApiRoverData() {
         return marsApiRoverData;
     }
@@ -103,4 +114,7 @@ public class HomeDto {
     public void setMINITES(Boolean MINITES) {
         this.MINITES = MINITES;
     }
+
+
+
 }

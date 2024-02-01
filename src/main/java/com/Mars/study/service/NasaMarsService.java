@@ -1,7 +1,7 @@
 package com.Mars.study.service;
 
 
-import com.Mars.study.NasaMarsPhoto;
+import com.Mars.study.HomeDto;
 import com.Mars.study.NasaResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -11,10 +11,10 @@ import org.springframework.web.client.RestTemplate;
 public class NasaMarsService {
 
 
-    public NasaResponse getRoverData(String roverType, Integer marsSol) {
+    public NasaResponse getRoverData(HomeDto homeDto) {
 
         RestTemplate rt = new RestTemplate();
-        ResponseEntity<NasaResponse> forEntity = rt.getForEntity("https://api.nasa.gov/mars-photos/api/v1/rovers/" + roverType + "/photos?sol=" + marsSol + "&api_key=62FQB9dDvEpei7mKgt7l8xQeB9aSS4efuTK0FrjE", NasaResponse.class);
+        ResponseEntity<NasaResponse> forEntity = rt.getForEntity("https://api.nasa.gov/mars-photos/api/v1/rovers/" + homeDto.getMarsApiRoverData() + "/photos?sol=" + homeDto.getMarsSol() + "&api_key=62FQB9dDvEpei7mKgt7l8xQeB9aSS4efuTK0FrjE", NasaResponse.class);
         NasaResponse body = forEntity.getBody();
         System.out.println(body);
 
