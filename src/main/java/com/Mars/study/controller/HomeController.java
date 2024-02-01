@@ -1,6 +1,7 @@
 package com.Mars.study.controller;
 
 
+import com.Mars.study.HomeDto;
 import com.Mars.study.NasaMarsPhoto;
 import com.Mars.study.NasaResponse;
 import com.Mars.study.service.NasaMarsService;
@@ -21,19 +22,19 @@ public class HomeController {
     private NasaMarsService service;
 
     @GetMapping("/")
-    public String HomeView(ModelMap modelMap,@RequestParam(required = false) String marsApiRoverData , @RequestParam(required = false) Integer marsSol) {
+    public String HomeView(ModelMap modelMap, HomeDto homeDto) {
 
-        if (StringUtils.isEmpty(marsApiRoverData)) {
-            marsApiRoverData = "opportunity";
+        if (StringUtils.isEmpty(homeDto.getMarsApiRoverData())) {
+            homeDto.setMarsApiRoverData("opportunity");
         }
-        if (marsSol == null) {
-            marsSol=1;
+        if (homeDto.getMarsSol() == null) {
+            homeDto.setMarsSol(1);
         }
-        NasaResponse roverData = service.getRoverData(marsApiRoverData,marsSol);
+        NasaResponse roverData = service.getRoverData(homeDto.getMarsApiRoverData(), homeDto.getMarsSol());
         modelMap.put("roverData", roverData);
+        modelMap.put("homeDto", homeDto);
         return "index";
     }
-
 
 
 }
