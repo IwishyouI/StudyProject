@@ -61,39 +61,9 @@ public class NasaMarsService {
 
         return urls;
     }
+
+    public Map<String, List<String>> getValidCameras() {
+        return validCameras;
+    }
+
 }
-//  if (Boolean.TRUE.equals(homeDto.getCHEMCAM())) {
-//          urls.add("https://api.nasa.gov/mars-photos/api/v1/rovers/" + homeDto.getMarsApiRoverData() + "/photos?sol=" + homeDto.getMarsSol() + "&api_key=62FQB9dDvEpei7mKgt7l8xQeB9aSS4efuTK0FrjE" + "&camera=CHEMCAM");
-//          }
-//
-//          if (Boolean.TRUE.equals(homeDto.getRHAZ())) {
-//          urls.add("https://api.nasa.gov/mars-photos/api/v1/rovers/" + homeDto.getMarsApiRoverData() + "/photos?sol=" + homeDto.getMarsSol() + "&api_key=62FQB9dDvEpei7mKgt7l8xQeB9aSS4efuTK0FrjE" + "&camera=RHAZ");
-//          }
-//
-//          if (Boolean.TRUE.equals(homeDto.getMAST())) {
-//          urls.add("https://api.nasa.gov/mars-photos/api/v1/rovers/" + homeDto.getMarsApiRoverData() + "/photos?sol=" + homeDto.getMarsSol() + "&api_key=62FQB9dDvEpei7mKgt7l8xQeB9aSS4efuTK0FrjE" + "&camera=MAST");
-//          }
-//
-//          if (Boolean.TRUE.equals(homeDto.getFHAZ())) {
-//          urls.add("https://api.nasa.gov/mars-photos/api/v1/rovers/" + homeDto.getMarsApiRoverData() + "/photos?sol=" + homeDto.getMarsSol() + "&api_key=62FQB9dDvEpei7mKgt7l8xQeB9aSS4efuTK0FrjE" + "&camera=FHAZ");
-//          }
-//
-//          if (Boolean.TRUE.equals(homeDto.getMAHLI())) {
-//          urls.add("https://api.nasa.gov/mars-photos/api/v1/rovers/" + homeDto.getMarsApiRoverData() + "/photos?sol=" + homeDto.getMarsSol() + "&api_key=62FQB9dDvEpei7mKgt7l8xQeB9aSS4efuTK0FrjE" + "&camera=MAHLI");
-//          }
-//
-//          if (Boolean.TRUE.equals(homeDto.getMARDI())) {
-//          urls.add("https://api.nasa.gov/mars-photos/api/v1/rovers/" + homeDto.getMarsApiRoverData() + "/photos?sol=" + homeDto.getMarsSol() + "&api_key=62FQB9dDvEpei7mKgt7l8xQeB9aSS4efuTK0FrjE" + "&camera=MARDI");
-//          }
-//
-//          if (Boolean.TRUE.equals(homeDto.getNAVCAM())) {
-//          urls.add("https://api.nasa.gov/mars-photos/api/v1/rovers/" + homeDto.getMarsApiRoverData() + "/photos?sol=" + homeDto.getMarsSol() + "&api_key=62FQB9dDvEpei7mKgt7l8xQeB9aSS4efuTK0FrjE" + "&camera=NAVCAM");
-//          }
-//
-//          if (Boolean.TRUE.equals(homeDto.getPANCAM()) && !"curiosity".equalsIgnoreCase(homeDto.getMarsApiRoverData())) {
-//          urls.add("https://api.nasa.gov/mars-photos/api/v1/rovers/" + homeDto.getMarsApiRoverData() + "/photos?sol=" + homeDto.getMarsSol() + "&api_key=62FQB9dDvEpei7mKgt7l8xQeB9aSS4efuTK0FrjE" + "&camera=PANCAM");
-//          }
-//
-//          if (Boolean.TRUE.equals(homeDto.getMINITES()) && !"curiosity".equalsIgnoreCase(homeDto.getMarsApiRoverData())) {
-//          urls.add("https://api.nasa.gov/mars-photos/api/v1/rovers/" + homeDto.getMarsApiRoverData() + "/photos?sol=" + homeDto.getMarsSol() + "&api_key=62FQB9dDvEpei7mKgt7l8xQeB9aSS4efuTK0FrjE" + "&camera=MINITES");
-//          }

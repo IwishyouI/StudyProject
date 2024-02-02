@@ -15,7 +15,6 @@
     <title>NasaApiProject</title>
 </head>
 <body>
-<h1>Hello, world!</h1>
 
 
 <div class="container">
@@ -33,6 +32,26 @@
             </label> <input type="number" class="form-group" th:field="${homeDto.marsSol}" min="0" value="1">
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>
+
+        <div th:if="${homeDto.marsApiRoverData == 'Opportunity' || homeDto.marsApiRoverData == ''}">
+            <div th:text="${validCameras.get('Opportunity')}">
+
+            </div>
+        </div>
+
+        <div th:if="${homeDto.marsApiRoverData == 'Curiosity' || homeDto.marsApiRoverData == ''}">
+            <div th:text="${validCameras.get('Curiosity')}">
+
+            </div>
+        </div>
+
+        <div th:if="${homeDto.marsApiRoverData == 'Spirit' || homeDto.marsApiRoverData == ''}">
+            <div th:text="${validCameras.get('Spirit')}">
+
+            </div>
+        </div>
+
+
         <div class="row">
             <div class="col-12 col-sm-4">
                 <div class="form-check">
