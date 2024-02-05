@@ -31,7 +31,7 @@ public class HomeController {
         NasaResponse roverData = service.getRoverData(homeDto);
         modelMap.put("roverData", roverData);
         modelMap.put("homeDto", homeDto);
-        modelMap.put("validCameras", service.getValidCameras());
+        modelMap.put("validCameras", service.getValidCameras().get(homeDto.getMarsApiRoverData()));
         return "index";
     }
 
