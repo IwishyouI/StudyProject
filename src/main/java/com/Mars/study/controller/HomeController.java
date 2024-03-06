@@ -3,6 +3,7 @@ package com.Mars.study.controller;
 
 import com.Mars.study.HomeDto;
 import com.Mars.study.NasaResponse;
+import com.Mars.study.repository.PreferenceRepository;
 import com.Mars.study.service.NasaMarsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +21,7 @@ public class HomeController {
 
     @Autowired
     private NasaMarsService service;
+
 
     @GetMapping("/")
     public String HomeView(ModelMap modelMap, HomeDto homeDto) throws InvocationTargetException, IllegalAccessException {
@@ -41,7 +43,7 @@ public class HomeController {
     @PostMapping("/")
     public String postHomeView(HomeDto homeDto) {
 
-
+        service.save(homeDto);
         System.out.println(homeDto);
         return "redirect:/";
 

@@ -1,8 +1,13 @@
 package com.Mars.study;
 
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "mars_api_preferences")
 public class HomeDto {
 
-
+    private Long id;
     private Long userId;
     private String marsApiRoverData;
 
@@ -24,6 +29,17 @@ public class HomeDto {
     private Boolean rememberPreferences;
 
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+//    @Column(nullable = false)
     public Long getUserId() {
         return userId;
     }
@@ -40,6 +56,7 @@ public class HomeDto {
         this.MARDI = MARDI;
     }
 
+    @Column(length = 20)
     public String getMarsApiRoverData() {
         return marsApiRoverData;
     }
@@ -135,5 +152,25 @@ public class HomeDto {
 
     public void setRememberPreferences(Boolean rememberPreferences) {
         this.rememberPreferences = rememberPreferences;
+    }
+
+    @Override
+    public String toString() {
+        return "HomeDto{" +
+                "userId=" + userId +
+                ", marsApiRoverData='" + marsApiRoverData + '\'' +
+                ", marsSol=" + marsSol +
+                ", defaultCheck1=" + defaultCheck1 +
+                ", FHAZ=" + FHAZ +
+                ", RHAZ=" + RHAZ +
+                ", MAST=" + MAST +
+                ", MARDI=" + MARDI +
+                ", CHEMCAM=" + CHEMCAM +
+                ", MAHLI=" + MAHLI +
+                ", NAVCAM=" + NAVCAM +
+                ", PANCAM=" + PANCAM +
+                ", MINITES=" + MINITES +
+                ", rememberPreferences=" + rememberPreferences +
+                '}';
     }
 }

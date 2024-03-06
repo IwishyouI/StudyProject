@@ -4,6 +4,8 @@ package com.Mars.study.service;
 import com.Mars.study.HomeDto;
 import com.Mars.study.NasaMarsPhoto;
 import com.Mars.study.NasaResponse;
+import com.Mars.study.repository.PreferenceRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -17,6 +19,9 @@ import java.util.*;
 public class NasaMarsService {
 
     private Map<String, List<String>> validCameras = new HashMap<>();
+
+    @Autowired
+    private PreferenceRepository preferenceRepository;
 
     public NasaMarsService() {
         validCameras.put("Opportunity", Arrays.asList("FHAZ", "RHAZ", "NAVCAM", "PANCAM", "MINITES"));
@@ -60,6 +65,10 @@ public class NasaMarsService {
 
 
         return urls;
+    }
+
+    public void save(HomeDto homeDto) {
+        HomeDto save = preferenceRepository.save(homeDto);
     }
 
     public Map<String, List<String>> getValidCameras() {

@@ -1,8 +1,8 @@
 let userId = getUrlParameter('userId')
 
-if(userId == null || userId == ''){
-    userId = localStorage.getItem('userID')
-}
+//if(userId == null || userId == ''){
+//    userId = localStorage.getItem('userId')
+//}
 
 if (userId = null || userId != ''){
     localStorage.setItem('userId' ,userId)
