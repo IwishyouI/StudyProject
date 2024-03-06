@@ -2,6 +2,8 @@ package com.Mars.study;
 
 public class HomeDto {
 
+
+    private Long userId;
     private String marsApiRoverData;
 
     private Integer marsSol;
@@ -18,6 +20,17 @@ public class HomeDto {
     private Boolean NAVCAM;
     private Boolean PANCAM;
     private Boolean MINITES;
+
+    private Boolean rememberPreferences;
+
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
 
     public Boolean getMARDI() {
         return MARDI;
@@ -116,5 +129,11 @@ public class HomeDto {
     }
 
 
+    public Boolean getRememberPreferences() {
+        return rememberPreferences;
+    }
 
+    public void setRememberPreferences(Boolean rememberPreferences) {
+        this.rememberPreferences = rememberPreferences;
+    }
 }
